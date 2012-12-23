@@ -1,0 +1,173 @@
+// MASK
+.x-mask {
+  &.alpha {
+    background: rgba(0, 0, 0, 0);   
+    .x-mask-inner {display: none;}
+  }
+}
+
+
+// JAM PLAIN BUTTON
+@include sencha-button-ui('JAM-plain', rgba(#fff, 1));
+.x-button.x-button-JAM-plain,
+.x-toolbar .x-button.x-button-JAM-plain {
+  background: transparent;
+  border: none;
+  @include border-radius(0);
+  color : lighten($JAM-blue2, 50%);
+  height: 3em;
+  padding: 0 .7em 0 .7em;
+  margin: 0;
+  & > * {
+    overflow: visible;
+  }
+
+  .x-button-label {
+        font-size: 2em;
+        color: lighten($JAM-blue, 5%);
+        text-shadow: -1px -1px 1px rgba(black, .15);
+        position:relative;
+        margin-top: -.2em;
+    }
+
+    .x-button-label:before,
+    .x-button-label:after {
+        content: "=";
+        position: absolute;
+    }
+
+    .x-button-label:before {
+        top: 1px;
+        left: 1px;
+        opacity:.6;
+        color: lighten($JAM-blue, 25%);
+    }
+    .x-button-label:after {
+        top: 0px;
+        left: 0px;
+        opacity:1;
+        color: lighten($JAM-blue, 5%);
+    }
+
+  .x-button-icon {
+    -webkit-mask-size: $toolbar-icon-size + .3;
+    width: $toolbar-icon-size + .3;
+    height: $toolbar-icon-size + .3;
+    &.x-icon-mask {
+      @include background-gradient(lighten($JAM-blue2, 50%), 'flat');
+      @include box-shadow(rgba(#000, .5) 0 .1em .2em);
+    }
+  }
+  &.x-button-pressing, &.x-button-pressed {
+    background: darken($JAM-blue2, 5%);
+    -webkit-box-shadow: none;
+    .x-button-icon {
+      &.x-icon-mask {
+        @include background-gradient(lighten($JAM-blue2, 70%), 'flat');
+      }
+    }
+  }
+}
+
+
+// JAM HEADER
+@include sencha-toolbar-ui('JAM-header', rgba($JAM-blue2, 1), 'flat');
+.x-toolbar-JAM-header {
+  height: 3em;
+  padding: 0;
+  z-index: 9999;
+  &.x-docked-top {
+    border-bottom: 1px solid darken($JAM-blue2, 5%);
+  }
+
+  .x-title {
+    font-size: .9em;
+    font-weight: normal;
+    color: lighten($JAM-blue, 20%);
+    text-shadow: none;
+  }
+}
+
+
+// JAM SPLITTER
+.x-JAM-menu-split {
+  background: darken($JAM-blue2, 5%);
+  border-right: 1px solid lighten($JAM-blue2, 3%);
+  height: 3em;
+  @include display-box;
+  @include box-align(center);
+  width: 1px;
+}
+
+
+// JAM MENU TOOLBAR
+@include sencha-toolbar-ui('JAM-toolbar', $JAM-grey, 'flat');
+.x-toolbar-JAM-toolbar {
+  height: 3em;
+  &.x-JAM-mainmenu {    
+    background: transparent;
+    border-bottom: 2px solid lighten($JAM-grey, 5%);
+    margin: 0 .9em .4em .9em;
+  }
+  .x-JAM-user-title {
+    height: 1.5em;  
+    line-height: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    font-size: .8em;
+    text-transform: none;
+    color: lighten($JAM-grey, 15%);
+    @include display-box;
+    @include box-align(center);
+  }
+  
+}
+
+
+// JAM MENU
+.x-JAM-slidenav-container {
+    box-shadow: -5px 0px 10px 2px #222;
+}
+.x-JAM-slidenav-menu {
+    background-color: $JAM-grey;
+    z-index: 1;
+    .x-list {
+      background-color: $JAM-grey;
+    }
+}
+@include sencha-button-ui('JAM-menu', $JAM-grey, 'flat');
+.x-button.x-button-JAM-menu, 
+.x-toolbar .x-button.x-button-JAM-menu {
+  border-color: $JAM-grey;
+  padding: .7em;
+  margin: .1em .5em .1em .5em;
+  &.x-button-pressing {
+    background: darken($JAM-grey, 5%);
+  }
+  .x-button-icon {
+      &.x-icon-mask {
+        width: 1.8em;
+        height: 1.8em;
+        -webkit-mask-size: 1.8em;
+      }
+      &.x-icon-small {
+        width: 1.4em;
+        height: 1.4em;
+        -webkit-mask-size: 1.4em;
+        margin: .2em;
+      }
+      &.ico-blue { background: $JAM-blue; }
+      &.ico-orange { background: $JAM-orange; }
+      &.ico-green { background: $JAM-green; }
+      &.ico-grey { background: lighten($JAM-grey, 25%); }
+  }
+  .x-button-label {
+    color: #fff;  
+    text-align: left;
+    margin-left: .9em;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+  
+}
