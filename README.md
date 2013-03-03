@@ -17,7 +17,7 @@ And you can configure following options:
 *  A specific component class reacting to drag
 *  Slide entry/exit speeds
 
-Check http://bit.ly/RMQrng for a live demo.
+Check http://bit.ly/12jo5FP for a live demo.
 
 ###Update log
 
