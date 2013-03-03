@@ -5,7 +5,7 @@ Ext.define("JAM.view.MainContainer", {
         id : 'mainContainer',
         layout : 'fit',
         scrollable : false,
-        
+
         slideSelector : 'x-toolbar-JAM-header',
         slideOpenDuration : 200,
         slideCloseDuration : 100,
@@ -17,15 +17,15 @@ Ext.define("JAM.view.MainContainer", {
             cls : 'x-JAM-slidenav-menu',
             layout: {
                 type : 'card',
-                align : 'center'    
+                align : 'center'
             }
         },
 
         containerPlaceholder : {
             cls: 'x-JAM-slidenav-container',
             layout: {
-                type : 'card',
-                align : 'center'    
+                type : 'fit',
+                align : 'center'
             },
             scrollable : false
         }
@@ -35,7 +35,7 @@ Ext.define("JAM.view.MainContainer", {
         this.menuPlaceholder = JAM.app.getController('MainContainer').createMenu();
         this.menuPlaceholder.add(Ext.create('JAM.view.Menu'));
         this.containerPlaceholder = JAM.app.getController('MainContainer').createContainer();
-        this.containerPlaceholder.add(Ext.create('JAM.view.Home'));
+        this.containerPlaceholder.add([Ext.create('JAM.view.Header'), Ext.create('JAM.view.Home')]);
         this.add([this.menuPlaceholder, this.containerPlaceholder]);
     }
-}); 
+});

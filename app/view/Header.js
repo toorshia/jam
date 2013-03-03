@@ -14,8 +14,6 @@ Ext.define("JAM.view.Header", {
             action : 'menuButton',
             ui : 'JAM-plain',
             text : '=',
-            //iconMask : true,
-            //iconCls : 'list2'
         }, {
             xtype : 'spacer',
             width : '2px',

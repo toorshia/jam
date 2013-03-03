@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM Menu for Sencha Touch 2</title>
+    <style type="text/css">
+        html {
+            height:100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#4c4c4c), to(#1a1a1a)); /* Safari 4+, Chrome */
+            background-image: -webkit-linear-gradient(top, #4c4c4c, #1a1a1a); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+            background-image:    -moz-linear-gradient(top, #4c4c4c, #1a1a1a); /* Firefox 3.6-15 */
+            background-image:      -o-linear-gradient(top, #4c4c4c, #1a1a1a); /* Opera 11.10-12.00 */
+            background-image:         linear-gradient(to bottom, #4c4c4c, #1a1a1a); /* Firefox 16+, IE10, Opera 12.50+ */
+        }
+
+        #iphone {
+            position: relative;
+            width: 382px;
+            height: 714px;
+            margin: 20px auto 0px auto;
+            background: url('iphone.png');
+        }
+
+        #shadow {
+            position: absolute;
+            background: url('shadow.png');
+            width: 500px;
+            height: 30px;
+            top: 700px;
+            left: -60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="iphone">
+        <div id="shadow"></div>
+        <iframe style="width: 320px; height: 480px; margin: 119px 0 0 33px; border: 0" src="build/package/index.html"></iframe>
+    </div>
+</body>
+</html>

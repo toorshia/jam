@@ -19,11 +19,13 @@
      */
     "js": [
         {
-            "path": "sdk/sencha-touch-all.js"
+            "path": "sdk-2.0.1/sencha-touch-all.js"
+            // "path": "sdk-2.1.1/sencha-touch-all-debug.js"
+
         },
-        {
-            "path" : "sdk/cordova-2.1.0.js"
-        },
+        // {
+        //     "path" : "sdk/cordova-2.1.0.js"
+        // },
         {
             "path": "app.js",
             "update": "delta"
@@ -65,7 +67,7 @@
          * List of items in the NETWORK section
          */
         "network": [
-            
+
         ],
         /**
          * List of items in the FALLBACK section

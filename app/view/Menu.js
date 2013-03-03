@@ -18,11 +18,11 @@ Ext.define("JAM.view.Menu", {
             items : [{
                 xtype : 'container',
                 cls : 'x-JAM-user-title',
-                html : 'Hello, User.',
+                html : 'Home Button?',
                 flex : 1
             }]
         };
-        
+
         var get = {
             action : 'getButton',
             xtype : 'button',
@@ -31,7 +31,7 @@ Ext.define("JAM.view.Menu", {
             iconCls : 'download ico-green',
             text : 'Get'
         };
-        
+
         var shit = {
             action : 'shitButton',
             xtype : 'button',
@@ -40,7 +40,7 @@ Ext.define("JAM.view.Menu", {
             iconCls : 'cloud_black ico-blue',
             text : 'Shit'
         };
-        
+
         var done = {
             action : 'doneButton',
             xtype : 'button',
@@ -49,16 +49,16 @@ Ext.define("JAM.view.Menu", {
             iconCls : 'check_black1 ico-orange',
             text : 'Done'
         };
-        
+
         var settings = {
             action : 'settingsButton',
             xtype : 'button',
             ui : 'JAM-menu',
             iconMask : true,
             iconCls : 'settings9 ico-grey x-icon-small',
-            text : 'Settings'
+            text : 'Ingredients'
         };
-        
+
         var help = {
             action : 'helpButton',
             xtype : 'button',
@@ -67,7 +67,7 @@ Ext.define("JAM.view.Menu", {
             iconCls : 'help_black ico-grey x-icon-small',
             text : 'Help'
         };
-        
+
         var logout = {
             action : 'logoutButton',
             xtype : 'button',
@@ -76,7 +76,7 @@ Ext.define("JAM.view.Menu", {
             iconCls : 'power_on ico-grey x-icon-small',
             text : 'Sign Out'
         };
-        
+
         var list = {
             xtype : 'container',
             layout : {

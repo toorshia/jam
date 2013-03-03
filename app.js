@@ -1,10 +1,10 @@
 Ext.application({
-    
+
     controllers : ['Menu', 'MainContainer', 'Header'],
 
     name : 'JAM',
 
-    views : ['MainContainer', 'Header', 'Home', 'Menu'],
+    views : ['MainContainer', 'Menu', 'Header', 'Home'],
 
     icon : {
         57 : 'resources/icons/Icon.png',

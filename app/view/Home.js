@@ -9,7 +9,6 @@ Ext.define("JAM.view.Home", {
     },
 
     initialize : function() {
-        var header = Ext.create('JAM.view.Header');
         var glare = {
             xtype : 'container',
             cls : 'x-JAM-glare',
@@ -21,9 +20,9 @@ Ext.define("JAM.view.Home", {
         var content = {
             xtype : 'container',
             cls : 'x-JAM-band',
-            html : '<img src="resources/images/sticker.png" alt="JAM" />' 
+            html : '<img src="resources/images/sticker.png" alt="JAM" />'
         };
-        this.setItems([header, glare, content]);
-        header, glare, content = null;
+        this.setItems([glare, content]);
+        glare, content = null;
     }
 });

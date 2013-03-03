@@ -2,16 +2,18 @@ Ext.define('JAM.controller.MainContainer', {
     extend : 'Ext.app.Controller',
 
     config : {
-        views : ['MainContainer', 'Menu', 'Home'],
+        views : ['MainContainer', 'Menu', 'Home', 'Get', 'Shit', 'Done', 'Settings', 'Help', 'Signout'],
 
         refs : {
             mainContainer : '[id=mainContainer]'
         }
 
     },
-    
+
+    activeView: null,
+
     onContainerDrag: function(draggable, e, offset, eOpts) {
-       var view = this.getMainContainer(); 
+       var view = this.getMainContainer();
         if(view.config.canDrag)
         {
             if (offset.x < 1) {
@@ -20,11 +22,11 @@ Ext.define('JAM.controller.MainContainer', {
                 this.setClosed(false);
             }
         } else {
-            return false;        
+            return false;
         }
         view = null;
     },
-    
+
     onContainerDragstart: function(draggable, e, offset, eOpts) {
         var view = this.getMainContainer();
         if(view.config.canDrag)
@@ -32,7 +34,7 @@ Ext.define('JAM.controller.MainContainer', {
             if (view.config.slideSelector === false) {
                 return false;
             }
-            
+
             if (view.config.slideSelector) {
                 node = e.target;
                 while (node = node.parentNode) {
@@ -47,7 +49,7 @@ Ext.define('JAM.controller.MainContainer', {
         }
         view = null;
     },
-    
+
     onContainerDragend: function(draggable, e, eOpts) {
         var view = this.getMainContainer();
         var velocity  = Math.abs(e.deltaX / e.deltaTime),
@@ -64,19 +66,19 @@ Ext.define('JAM.controller.MainContainer', {
                     offset.x = (velocity > 0.75 || offset.x < threshold) ? 0 : view.config.menuPlaceholder.width;
                     break;
             }
-            
+
             this.moveContainer(offset.x);
          } else {
             return false;
-         }   
+         }
         view, velocity, direction, offset, threshold = null;
     },
-    
+
     isClosed: function() {
-        
+
         return (this.getMainContainer().containerPlaceholder.draggableBehavior.draggable.offset.x === 0);
     },
-    
+
     setClosed: function(closed) {
         if (closed) {
             this.getMainContainer().containerPlaceholder.removeCls('open');
@@ -89,20 +91,29 @@ Ext.define('JAM.controller.MainContainer', {
             });
         }
     },
-    
+
     openContainer: function() {
         var duration = this.getMainContainer().config.slideOpenDuration;
         this.getMainContainer().containerPlaceholder.addCls('open');
         this.moveContainer(this.getMainContainer().config.menuPlaceholder.width, duration);
         duration = null;
     },
-    
+
     closeContainer: function() {
         var duration = this.getMainContainer().config.slideCloseDuration;
         this.moveContainer(0, duration);
         duration = null;
     },
-    
+
+    menuItemTap: function(aview) {
+        if(typeof (aview) !== 'undefined' && aview !== null) {
+            this.activeView = aview;
+        }
+        var duration = this.getMainContainer().config.slideCloseDuration;
+        this.moveContainer(0, duration);
+        duration = null;
+    },
+
     toggleContainer: function() {
         var duration;
         if (this.isClosed()) {
@@ -122,12 +133,12 @@ Ext.define('JAM.controller.MainContainer', {
             duration: duration
         });
     },
-    
+
     createContainer: function() {
         var view = this.getMainContainer();
         var cntrl = this;
         return Ext.create('Ext.Panel', Ext.merge({}, view.config.containerPlaceholder, {
-            
+
             draggable: {
                 direction: 'horizontal',
                 constraint: {
@@ -148,20 +159,29 @@ Ext.define('JAM.controller.MainContainer', {
                     listeners: {
                         animationend: function(translatable, b, c) {
                             cntrl.setClosed(cntrl.isClosed());
+                            cntrl.switchActiveView();
                         },
-                        scope: cntrl 
+                        scope: cntrl
                     }
                 }
-                
+
             }
-            
+
         }));
-        
+
     },
 
     createMenu: function() {
         var view = this.getMainContainer();
         return Ext.create('Ext.Container', Ext.merge({}, this.getMainContainer().config.menuPlaceholder, {}));
+    },
+
+    switchActiveView: function() {
+        if(typeof (this.activeView) !== 'undefined' && this.activeView !== null) {
+            this.getMainContainer().containerPlaceholder.removeAt(1);
+            this.getMainContainer().containerPlaceholder.add(Ext.create(this.activeView));
+            this.activeView = null;
+        }
     }
 
 });
