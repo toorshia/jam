@@ -83,6 +83,7 @@ Ext.define("JAM.view.Menu", {
                 type : 'vbox',
                 pack : 'top'
             },
+            scrollable : true,
             items : [get, shit, done, settings, help, logout]
         };
 

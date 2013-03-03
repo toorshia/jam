@@ -5,7 +5,7 @@ Ext.define("JAM.view.Home", {
         id : 'home',
         layout : 'fit',
         cls : 'x-JAM-jar',
-        scrollable : false
+        scrollable : null
     },
 
     initialize : function() {

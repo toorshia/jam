@@ -87,7 +87,8 @@ Ext.define('JAM.controller.MainContainer', {
             this.getMainContainer().containerPlaceholder.addCls('open');
             this.getMainContainer().containerPlaceholder.setMasked({
                 xtype : 'loadmask',
-                floatingCls : 'alpha'
+                message: null,
+                indicator: false
             });
         }
     },

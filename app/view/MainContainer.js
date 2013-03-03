@@ -4,7 +4,7 @@ Ext.define("JAM.view.MainContainer", {
     config : {
         id : 'mainContainer',
         layout : 'fit',
-        scrollable : false,
+        scrollable : null,
 
         slideSelector : 'x-toolbar-JAM-header',
         slideOpenDuration : 200,
@@ -18,7 +18,8 @@ Ext.define("JAM.view.MainContainer", {
             layout: {
                 type : 'card',
                 align : 'center'
-            }
+            },
+            scrollable : null
         },
 
         containerPlaceholder : {
@@ -27,7 +28,7 @@ Ext.define("JAM.view.MainContainer", {
                 type : 'fit',
                 align : 'center'
             },
-            scrollable : false
+            scrollable : null
         }
     },
 
