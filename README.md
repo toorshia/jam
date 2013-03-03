@@ -1,6 +1,6 @@
 ![JAM](https://dl.dropbox.com/u/6211055/IMG/jam_logo.png)
 
-JAM - Just App Menu is a simple "Facebook-like" menu for Sencha Touch 2.
+JAM - Just App Menu is a simple "Facebook-like" menu for Sencha Touch 2.1.1.
 It is based on wnielson's menu https://github.com/wnielson/sencha-SlideNavigation, but made more simple by decoupling logic and markup that binds menu items with corresponding views.
 
 JAM serves as a container for your menu and app contents - you can pretty much stuff any kind of app inside of it, as long as your menu contents and app contents are separate views.
@@ -20,6 +20,11 @@ And you can configure following options:
 Check http://bit.ly/12jo5FP for a live demo.
 
 ###Update log
+
+######March 03, 2013.
+
+ * Fixed and restructured everything to work with sdk 2.1.1
+ * .apk file provided is based on sdk 2.0.1 - need to address Android 4.0.3 issue with .apks generated from Sencha Cmd (http://www.sencha.com/forum/showthread.php?162322)
 
 ######March 02, 2013.
 
